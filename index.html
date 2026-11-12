@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aufa Roisul Chakim — UI/UX Designer</title>
+<meta name="description" content="Portfolio Aufa Roisul Chakim, UI/UX Designer dan anak Teknik Informatika: merancang antarmuka, membangunnya dengan kode.">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./lib/three.module.min.js",
+    "three/addons/": "./lib/addons/"
+  }
+}
+</script>
+</head>
+<body>
+
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+
+<header class="site-head">
+  <a class="brand" href="#hero">ARC<span class="brand-dot">.</span></a>
+  <nav class="site-nav" aria-label="Navigasi utama">
+    <a href="#tentang">Tentang</a>
+    <a href="#keahlian">Keahlian</a>
+    <a href="#karya">Karya</a>
+    <a href="#pengalaman">Pengalaman</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- 1. HERO -->
+  <section class="panel panel--hero" id="hero">
+    <div class="inner inner--left">
+      <p class="eyebrow reveal">Portfolio — Aufa Roisul Chakim</p>
+      <h1 class="display reveal">AUFA<br>ROISUL<br>CHAKIM</h1>
+      <p class="role reveal">UI/UX <em>Designer</em></p>
+      <p class="lead reveal">Anak Teknik Informatika yang merancang antarmuka — lalu membangunnya sendiri dengan kode, gerak, dan sedikit 3D.</p>
+      <p class="scroll-cue reveal" aria-hidden="true">Gulir ke bawah <span class="cue-line"></span></p>
+    </div>
+  </section>
+
+  <!-- 2. TENTANG -->
+  <section class="panel panel--tentang" id="tentang">
+    <div class="inner">
+      <div class="tentang-teks">
+        <p class="eyebrow reveal">01 — Tentang</p>
+        <h2 class="reveal">Desain yang dipikirkan, kode yang dikerjakan.</h2>
+        <p class="reveal">Saya Aufa Roisul Chakim, mahasiswa Teknik Informatika dengan fokus utama UI/UX. Saya merancang antarmuka di Figma, lalu mewujudkannya menjadi halaman web yang hidup dengan HTML, CSS, dan JavaScript.</p>
+        <p class="reveal">Di luar kelas, saya mengasah motion design lewat After Effects dan Blender — karena antarmuka yang baik tidak cuma rapi, tapi juga terasa hidup saat dipakai.</p>
+      </div>
+      <figure class="photo reveal">
+        <img src="assets/foto-profil.jpg" alt="Foto diri Aufa Roisul Chakim" loading="lazy">
+        <figcaption>Aufa Roisul Chakim</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 3. KEAHLIAN -->
+  <section class="panel" id="keahlian">
+    <div class="inner inner--left">
+      <p class="eyebrow reveal">02 — Keahlian</p>
+      <h2 class="reveal">Tiga wilayah, satu alur kerja.</h2>
+      <div class="skill-group reveal">
+        <h3>Bahasa &amp; Basis Data</h3>
+        <ul class="chips">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>Java</li><li>PHP</li><li>C</li><li>MySQL</li>
+        </ul>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Desain</h3>
+        <ul class="chips">
+          <li>Figma</li><li>UI/UX</li>
+        </ul>
+        <p class="skill-note">Riset, wireframe, sampai desain antarmuka akhir dikerjakan di Figma.</p>
+      </div>
+      <div class="skill-group reveal">
+        <h3>Motion &amp; 3D</h3>
+        <ul class="chips">
+          <li>After Effects</li><li>Blender</li><li>GSAP</li><li>Three.js</li><li>Tailwind</li><li>Tipografi</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. KARYA -->
+  <section class="panel panel--wide" id="karya">
+    <div class="inner">
+      <p class="eyebrow reveal">03 — Karya</p>
+      <h2 class="reveal">Enam repo, semua terbuka di GitHub.</h2>
+      <ul class="projects">
+        <li class="reveal">
+          <a class="project" href="https://github.com/RoisChakim/roi-ai-metadata-pro" target="_blank" rel="noopener">
+            <span class="project-main">
+              <span class="project-name">roi-ai-metadata-pro</span>
+              <span class="project-desc">AI-powered Adobe Stock metadata generator with Gemini Vision, SEO optimization, niche targeting, and automated keyword generation for stock contributors.</span>
+            </span>
+            <span class="project-lang">TypeScript</span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="project" href="https://github.com/RoisChakim/Remotion-4K-AdobeStock" target="_blank" rel="noopener">
+            <span class="project-main">
+              <span class="project-name">Remotion-4K-AdobeStock</span>
+            </span>
+            <span class="project-lang">TypeScript</span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="project" href="https://github.com/RoisChakim/Keywoard-finder-" target="_blank" rel="noopener">
+            <span class="project-main">
+              <span class="project-name">Keywoard-finder-</span>
+            </span>
+            <span class="project-lang">JavaScript</span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="project" href="https://github.com/RoisChakim/microservices-order-inventory" target="_blank" rel="noopener">
+            <span class="project-main">
+              <span class="project-name">microservices-order-inventory</span>
+            </span>
+            <span class="project-lang">Java</span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="project" href="https://github.com/RoisChakim/Backend_POS_MOKA" target="_blank" rel="noopener">
+            <span class="project-main">
+              <span class="project-name">Backend_POS_MOKA</span>
+              <span class="project-desc">Backend untuk tugas rancang pemrograman mobile dan pemrograman berbasis platform. Aplikasi mirip seperti MOKA POS di cafe.</span>
+            </span>
+            <span class="project-lang">Java</span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="project" href="https://github.com/RoisChakim/Biodata-laravel" target="_blank" rel="noopener">
+            <span class="project-main">
+              <span class="project-name">Biodata-laravel</span>
+              <span class="project-desc">Biodata untuk TTS.</span>
+            </span>
+            <span class="project-lang">Blade / Laravel</span>
+            <span class="project-arrow" aria-hidden="true">↗</span>
+          </a>
+        </li>
+      </ul>
+      <p class="reveal"><a class="btn" href="https://github.com/RoisChakim" target="_blank" rel="noopener">Lihat GitHub — @RoisChakim ↗</a></p>
+    </div>
+  </section>
+
+  <!-- 5. PENGALAMAN -->
+  <section class="panel" id="pengalaman">
+    <div class="inner inner--right">
+      <p class="eyebrow reveal">04 — Pengalaman</p>
+      <h2 class="reveal">Magang di dinas perpustakaan daerah.</h2>
+      <article class="exp reveal">
+        <h3>Dinas Kearsipan dan Perpustakaan Kabupaten Semarang</h3>
+        <p class="exp-meta">Magang — September s.d. November 2026</p>
+        <p>Menyusun abstrak informatif dan anotasi buku dari katalog perpustakaan, melayani bimbingan pemustaka, serta menyiapkan laporan perjalanan dinas untuk kegiatan sosialisasi literasi ke sekolah-sekolah.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 6. KONTAK -->
+  <section class="panel panel--kontak" id="kontak">
+    <div class="inner inner--center">
+      <p class="eyebrow reveal">05 — Kontak</p>
+      <h2 class="reveal">Mari buat sesuatu<br>yang <em>bagus</em>.</h2>
+      <p class="lead reveal">Punya proyek, tugas, atau sekadar mau bertukar pikiran soal desain dan kode? Pintu saya terbuka.</p>
+      <ul class="contact-list reveal">
+        <li><a class="btn" href="mailto:roischakim86@gmail.com">roischakim86@gmail.com</a></li>
+        <li><a class="btn" href="https://instagram.com/rois_chakim" target="_blank" rel="noopener">Instagram — @rois_chakim ↗</a></li>
+        <li><a class="btn" href="https://github.com/RoisChakim" target="_blank" rel="noopener">GitHub — RoisChakim ↗</a></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <p>© 2026 Aufa Roisul Chakim</p>
+  <p class="foot-note">Satu objek 3D menemani dari atas sampai sini — terima kasih sudah menggulir.</p>
+</footer>
+
+<script src="lib/gsap.min.js"></script>
+<script src="lib/ScrollTrigger.min.js"></script>
+<script type="module" src="js/scene.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

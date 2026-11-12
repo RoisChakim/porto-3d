@@ -1,0 +1,381 @@
+/* ============================================================
+   Web Profil — Aufa Roisul Chakim
+   Palet hangat-gelap (cokelat tua + amber) & tipografi krem.
+   Tanpa webfont eksternal, tanpa pola opacity-0.
+   ============================================================ */
+
+:root {
+  --bg: #17100a;
+  --bg-deep: #100a05;
+  --cream: #f4e9d4;
+  --cream-dim: rgba(244, 233, 212, 0.62);
+  --cream-faint: rgba(244, 233, 212, 0.38);
+  --amber: #e39a35;
+  --amber-soft: #eda845;
+  --line: rgba(244, 233, 212, 0.16);
+  --card: rgba(23, 16, 10, 0.55);
+  --sans: "Avenir Next", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --mono: "SF Mono", "Cascadia Code", Consolas, monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  font-family: var(--sans);
+  color: var(--cream);
+  background:
+    radial-gradient(1100px 700px at 82% -10%, rgba(227, 154, 53, 0.14), transparent 60%),
+    radial-gradient(900px 900px at -10% 110%, rgba(150, 84, 24, 0.12), transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  line-height: 1.55;
+}
+
+/* ---------- Lapisan 3D & dekorasi tetap ---------- */
+
+#scene {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 90% 75% at 50% 45%, transparent 55%, rgba(10, 6, 3, 0.55) 100%);
+}
+
+#progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 40;
+  background: linear-gradient(90deg, var(--amber), var(--amber-soft));
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+/* ---------- Kepala situs ---------- */
+
+.site-head {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px clamp(20px, 5vw, 56px);
+  background: linear-gradient(180deg, rgba(16, 10, 5, 0.72), rgba(16, 10, 5, 0));
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+  text-decoration: none;
+}
+.brand-dot { color: var(--amber); }
+
+.site-nav { display: flex; gap: clamp(14px, 3vw, 34px); }
+.site-nav a {
+  color: var(--cream-dim);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: color 0.25s ease;
+}
+.site-nav a:hover, .site-nav a:focus-visible { color: var(--amber-soft); }
+
+/* ---------- Panel / section ---------- */
+
+main { position: relative; z-index: 2; }
+
+.panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 16vh clamp(20px, 6vw, 72px);
+}
+
+.panel .inner { max-width: 620px; }
+.inner--left { margin-right: auto; }
+.inner--right { margin-left: auto; }
+.inner--center { margin-inline: auto; text-align: center; max-width: 720px; }
+
+.panel--wide .inner { max-width: 1060px; width: 100%; margin-inline: auto; }
+.panel--wide h2 { max-width: 21ch; }
+
+/* Teks kontak duduk di depan objek terang — beri bayangan gelap
+   halus agar tetap terbaca. */
+.panel--kontak h2, .panel--kontak .lead, .panel--kontak .eyebrow {
+  text-shadow: 0 2px 26px rgba(10, 6, 3, 0.95), 0 0 8px rgba(10, 6, 3, 0.9);
+}
+.panel--kontak .inner {
+  background: radial-gradient(ellipse 72% 62% at 50% 46%, rgba(13, 8, 4, 0.6), rgba(13, 8, 4, 0) 72%);
+}
+.panel--kontak { align-items: flex-end; padding-bottom: 10vh; }
+
+/* ---------- Tipografi ---------- */
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 26px;
+}
+
+.display {
+  font-size: clamp(54px, 10.5vw, 132px);
+  line-height: 0.94;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(34px, 5.2vw, 58px);
+  line-height: 1.06;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+  margin-bottom: 28px;
+}
+h2 em, .role em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--amber-soft);
+}
+
+.role {
+  font-size: clamp(30px, 4.6vw, 54px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 30px;
+}
+
+.lead {
+  font-size: clamp(17px, 1.6vw, 20px);
+  color: var(--cream-dim);
+  max-width: 46ch;
+  margin-top: 18px;
+}
+.inner--center .lead { margin-inline: auto; }
+
+.panel p + p { margin-top: 16px; }
+.panel .inner > p:not(.eyebrow):not(.lead) { color: var(--cream-dim); font-size: 17px; }
+
+.scroll-cue {
+  margin-top: 54px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.cue-line {
+  display: inline-block;
+  width: 64px;
+  height: 1px;
+  background: var(--amber);
+  animation: cue 2.2s ease-in-out infinite;
+  transform-origin: 0 50%;
+}
+@keyframes cue {
+  0%, 100% { transform: scaleX(0.35); }
+  50% { transform: scaleX(1); }
+}
+
+/* ---------- Tentang: biodata kiri, foto kanan ---------- */
+
+.panel--tentang .inner {
+  max-width: 1080px;
+  width: 100%;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+.panel--tentang .photo { margin-top: 0; justify-self: end; }
+.panel--tentang .photo img { width: min(370px, 100%); }
+
+/* ---------- Foto ---------- */
+
+.photo { margin-top: 34px; }
+.photo img {
+  width: min(330px, 78vw);
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 0 6px rgba(227, 154, 53, 0.06);
+  display: block;
+}
+.photo figcaption {
+  margin-top: 12px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream-faint);
+}
+
+/* ---------- Keahlian ---------- */
+
+.skill-group { margin-top: 30px; }
+.skill-group h3 {
+  font-size: 15px;
+  font-family: var(--mono);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 14px;
+}
+.chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.chips li {
+  padding: 9px 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  background: var(--card);
+  backdrop-filter: blur(4px);
+  transition: border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+.chips li:hover { border-color: var(--amber); color: var(--amber-soft); transform: translateY(-2px); }
+.skill-note { margin-top: 12px; font-size: 15px; color: var(--cream-faint); }
+
+/* ---------- Karya ---------- */
+
+.projects { list-style: none; margin-top: 12px; border-bottom: 1px solid var(--line); }
+.project {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 24px 6px;
+  border-top: 1px solid var(--line);
+  color: var(--cream);
+  text-decoration: none;
+  transition: background 0.25s ease, padding-left 0.25s ease;
+}
+.project:hover, .project:focus-visible { background: rgba(227, 154, 53, 0.05); padding-left: 16px; }
+.project-main { flex: 1 1 auto; min-width: 0; }
+.project-name {
+  display: block;
+  font-size: clamp(21px, 2.6vw, 31px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  overflow-wrap: anywhere;
+}
+.project:hover .project-name { color: var(--amber-soft); }
+.project-desc {
+  display: block;
+  margin-top: 6px;
+  font-size: 14.5px;
+  color: var(--cream-dim);
+  max-width: 62ch;
+}
+.project-lang {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  white-space: nowrap;
+}
+.project-arrow { font-size: 20px; color: var(--cream-faint); transition: transform 0.25s ease, color 0.25s ease; }
+.project:hover .project-arrow { transform: translate(3px, -3px); color: var(--amber-soft); }
+
+/* ---------- Tombol ---------- */
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 28px;
+  border: 1px solid var(--amber);
+  border-radius: 999px;
+  color: var(--cream);
+  font-weight: 650;
+  font-size: 16px;
+  text-decoration: none;
+  background: rgba(227, 154, 53, 0.08);
+  transition: background 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+.btn:hover, .btn:focus-visible { background: var(--amber); color: #221304; transform: translateY(-2px); }
+
+/* ---------- Pengalaman ---------- */
+
+.exp {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 30px;
+  background: var(--card);
+  backdrop-filter: blur(4px);
+}
+.exp h3 { font-size: 22px; letter-spacing: -0.01em; margin-bottom: 8px; }
+.exp-meta {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 14px;
+}
+.exp p:last-child { color: var(--cream-dim); font-size: 16px; }
+
+/* ---------- Kontak & kaki ---------- */
+
+.contact-list { list-style: none; }
+.contact-list .btn { margin-top: 16px; }
+
+.site-foot {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  justify-content: space-between;
+  padding: 30px clamp(20px, 6vw, 72px) 40px;
+  border-top: 1px solid var(--line);
+  color: var(--cream-faint);
+  font-size: 14px;
+}
+
+/* ---------- Seluler ---------- */
+
+@media (max-width: 760px) {
+  .site-nav a:nth-child(1), .site-nav a:nth-child(2), .site-nav a:nth-child(4) { display: none; }
+  .panel { padding: 14vh 20px 12vh; align-items: flex-end; }
+  .panel--hero { align-items: flex-start; padding-top: 31vh; }
+  .panel .inner { max-width: 100%; }
+  .project { flex-wrap: wrap; gap: 6px 14px; }
+  .project-lang { order: 3; }
+  .exp { padding: 22px; }
+  .panel--tentang .inner { grid-template-columns: 1fr; }
+  .panel--tentang .photo { justify-self: start; margin-top: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .cue-line { animation: none; }
+}
